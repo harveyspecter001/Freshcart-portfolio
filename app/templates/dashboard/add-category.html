@@ -1,0 +1,390 @@
+{%extends "dashboard_base.html" %}
+{% block title%} Index {% endblock %}
+{% block content%} 
+<head>
+    {{form.media}}
+</head>
+        <nav class="navbar-vertical-nav offcanvas offcanvas-start navbar-offcanvac" tabindex="-1" id="offcanvasExample">
+            <div class="navbar-vertical">
+                <div class="px-4 py-5 d-flex justify-content-between align-items-center">
+                    <a href="https://freshcart.codescandy.com/index.html" class="navbar-brand">
+                        <img src="https://freshcart.codescandy.com/assets/images/logo/freshcart-logo.svg" alt="">
+                    </a>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="navbar-vertical-content flex-grow-1" data-simplebar="">
+                    <ul class="navbar-nav flex-column">
+                        <li class="nav-item ">
+                            <a class="nav-link " href="index.html">
+                                <div class="d-flex align-items-center">
+                                    <span class="nav-link-icon"> <i class="bi bi-house"></i></span>
+                                    <span>Dashboard</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item mt-6 mb-3">
+                            <span class="nav-label">Store Managements</span>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link " href="products.html">
+                                <div class="d-flex align-items-center">
+                                    <span class="nav-link-icon"> <i class="bi bi-cart"></i></span>
+                                    <span class="nav-link-text">Products</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link  active " href="categories.html">
+                                <div class="d-flex align-items-center">
+                                    <span class="nav-link-icon"> <i class="bi bi-list-task"></i></span>
+                                    <span class="nav-link-text">Categories</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link   collapsed " href="#" data-bs-toggle="collapse"
+                                data-bs-target="#navOrders" aria-expanded="false" aria-controls="navOrders">
+                                <div class="d-flex align-items-center">
+                                    <span class="nav-link-icon"> <i class="bi bi-bag"></i></span>
+                                    <span class="nav-link-text">Orders</span>
+                                </div>
+                            </a>
+                            <div id="navOrders" class="collapse " data-bs-parent="#sideNavbar">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item ">
+                                        <a class="nav-link " href="order-list.html">
+                                            List
+                                        </a>
+                                    </li>
+                                    <!-- Nav item -->
+                                    <li class="nav-item ">
+                                        <a class="nav-link " href="order-single.html">
+                                            Single
+
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link " href="vendor-grid.html">
+                                <div class="d-flex align-items-center">
+                                    <span class="nav-link-icon"> <i class="bi bi-shop"></i></span>
+                                    <span class="nav-link-text">Sellers / Vendors</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link " href="customers.html">
+                                <div class="d-flex align-items-center">
+                                    <span class="nav-link-icon"> <i class="bi bi-people"></i></span>
+                                    <span class="nav-link-text">Customers</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link " href="reviews.html">
+                                <div class="d-flex align-items-center">
+                                    <span class="nav-link-icon"> <i class="bi bi-star"></i></span>
+                                    <span class="nav-link-text">Reviews</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item mt-6 mb-3">
+                            <span class="nav-label">Site Settings</span> <span
+                                class="badge bg-light-info text-dark-info">Coming Soon</span>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link disabled" href="#!">
+                                <div class="d-flex align-items-center">
+                                    <span class="nav-link-icon"> <i class="bi bi-newspaper"></i></span>
+                                    <span class="nav-link-text">Blog</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link disabled" href="#">
+                                <div class="d-flex align-items-center">
+                                    <span class="nav-link-icon"> <i class="bi bi-images"></i></span>
+                                    <span class="nav-link-text">Media</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link disabled" href="#!">
+                                <div class="d-flex align-items-center">
+                                    <span class="nav-link-icon"> <i class="bi bi-gear"></i></span>
+                                    <span class="nav-link-text">Store Settings</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item mt-6 mb-3">
+                            <span class="nav-label">Support</span> <span
+                                class="badge bg-light-info text-dark-info">Coming Soon</span>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link disabled" href="#!">
+                                <div class="d-flex align-items-center">
+                                    <span class="nav-link-icon"> <i class="bi bi-headphones"></i></span>
+                                    <span class="nav-link-text">Support Ticket</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link disabled" href="#">
+                                <div class="d-flex align-items-center">
+                                    <span class="nav-link-icon"> <i class="bi bi-question-circle"></i></span>
+                                    <span class="nav-link-text">Help Center</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link disabled" href="#!">
+                                <div class="d-flex align-items-center">
+                                    <span class="nav-link-icon"> <i class="bi bi-infinity"></i></span>
+                                    <span class="nav-link-text">How FreshCart Works</span>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="nav-item mt-6 mb-3">
+                            <span class="nav-label">Our Apps</span>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link disabled" href="#!">
+                                <div class="d-flex align-items-center">
+                                    <span class="nav-link-icon"> <i class="bi bi-apple"></i></span>
+                                    <span class="nav-link-text">Apple Store</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link disabled" href="#!">
+                                <div class="d-flex align-items-center">
+                                    <span class="nav-link-icon"> <i class="bi bi-google-play"></i></span>
+                                    <span class="nav-link-text">Google Play Store</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li id="navMenuLevel" class="collapse " data-bs-parent="#sideNavbar">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link " href="#" data-bs-toggle="collapse"
+                                        data-bs-target="#navMenuLevelSecond2" aria-expanded="false"
+                                        aria-controls="navMenuLevelSecond2">
+                                        Two Level
+                                    </a>
+                                    <div id="navMenuLevelSecond2" class="collapse" data-bs-parent="#navMenuLevel">
+                                        <ul class="nav flex-column">
+                                            <li class="nav-item">
+                                                <a class="nav-link " href="#">NavItem 1</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link " href="#">NavItem 2</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link  collapsed  " href="#" data-bs-toggle="collapse"
+                                        data-bs-target="#navMenuLevelThree2" aria-expanded="false"
+                                        aria-controls="navMenuLevelThree2">
+                                        Three Level
+                                    </a>
+                                    <div id="navMenuLevelThree2" class="collapse " data-bs-parent="#navMenuLevel">
+                                        <ul class="nav flex-column">
+                                            <li class="nav-item">
+                                                <a class="nav-link  collapsed " href="#" data-bs-toggle="collapse"
+                                                    data-bs-target="#navMenuLevelThree3" aria-expanded="false"
+                                                    aria-controls="navMenuLevelThree3">
+                                                    NavItem 1
+                                                </a>
+                                                <div id="navMenuLevelThree3" class="collapse collapse "
+                                                    data-bs-parent="#navMenuLevelThree">
+                                                    <ul class="nav flex-column">
+                                                        <li class="nav-item">
+                                                            <a class="nav-link " href="#">
+                                                                NavChild Item 1
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link " href="#">Nav
+                                                    Item 2</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </div>
+
+        </nav>
+
+
+        <!-- main -->
+        <main class="main-content-wrapper">
+            <!-- container -->
+            <div class="container">
+                <!-- row -->
+                <div class="row mb-8">
+                    <div class="col-md-12">
+                        <div class="d-md-flex justify-content-between align-items-center">
+                            <!-- page header -->
+                            <div>
+                                <h2>Add New Category</h2>
+                                <!-- breacrumb -->
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb mb-0">
+                                        <li class="breadcrumb-item"><a href="#" class="text-inherit">Dashboard</a></li>
+                                        <li class="breadcrumb-item"><a href="#" class="text-inherit">Categories</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Add New Category</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                            <div>
+                                <a href="categories.html" class="btn btn-light">Back to Categories</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-12">
+                        <!-- card -->
+                        <div class="card mb-6 shadow border-0">
+                            <!-- card body -->
+                            <form enctype="multipart/form-data" method="post">
+                                {% csrf_token %}
+                                {% if form.errors %}
+                                <div class="alert alert-danger alert-dismissible" role="alert">
+                                    <div id="form_errors">
+                                        {% for key, value in form.errors.items %}
+                                        <strong>{{ value }}</strong>
+                                        {% endfor %}
+                                    </div>
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                {% endif %}
+                                <div class="card-body p-6 ">
+                                    <div class="row">
+                                        <h4 class="mb-5 h5">Category Image</h4>
+                                        <div class="mb-4 d-flex">
+                                            <div class="position-relative">
+
+                                                {{ form.image }}
+
+                                            </div>
+
+
+ 
+                                        </div>
+                                        <h4 class="mb-4 h5 mt-5">Category Information</h4>
+
+                                        {% if form.errors %}
+                                        <div class="alert alert-danger alert-dismissible" role="alert">
+                                            <div id="form_errors">
+                                                {% for key, value in form.errors.items %}
+                                                <strong>{{ value }}</strong>
+                                                {% endfor %}
+                                            </div>
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        {% endif %}
+                                        <div class="row">
+                                            <!-- input -->
+                                            <div class="mb-3 col-lg-6">
+                                                <label class="form-label">Category Name</label>
+                                                {{form.name}}
+                                            </div>
+                                            <!-- input -->
+                                            <div class="mb-3 col-lg-6">
+                                                <label class="form-label">Slug</label>
+                                                {{form.slug}}
+                                            </div>
+                                            <!-- input -->
+                                            <div class="mb-3 col-lg-6">
+                                                <label class="form-label">Parent Category</label>
+                                                <select class="form-select" name="parent_category">
+                                                    <option aria-placeholder="none"> </option>
+                                                    {% for category in categories %}
+                                                    <option value="{{category.name}}">{{category.name}}</option>
+                                                    {% endfor %}
+                                                </select>
+                                            </div>
+                                            <div class="mb-3 col-lg-6">
+                                                <label class="form-label">Date</label>
+                                                {{form.date}}
+                                            </div>
+
+                                            <!-- input -->
+                                            <div class="mb-3 col-lg-12">
+                                                <label class="form-label">Descriptions</label>
+                                                <div class="py-2"></div>
+                                                {{ form.description }}
+
+
+                                        <!-- input -->
+                                        <div class="mb-3 col-lg-12 ">
+                                            <label class="form-label" id="productSKU">Status</label><br>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="status" id="active"
+                                                    value="active" checked>
+                                                <label class="form-check-label" for="active">Active</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="status" id="inactive"
+                                                    value="inactive">
+                                                <label class="form-check-label" for="inactive">Inactive</label>
+                                            </div>
+                                        </div>
+                                        <!-- input -->
+                                </div>
+                                <div class="mb-3 col-lg-12 mt-5 ">
+                                    <h4 class="mb-4 h5">Meta Data</h4>
+                                    <!-- input -->
+                                    <div class="mb-3">
+                                        <label class="form-label">Meta Title</label>
+                                        {{form.meta_title}}
+                                    </div>
+
+                                    <!-- input -->
+                                    <div class="mb-3">
+                                        <label class="form-label">Meta Description</label>
+
+                                        {{ form.meta_description }}
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <button class="btn btn-primary" type="submit">
+                                        Create Category
+                                    </button>
+                                    <a href="#" class="btn btn-secondary ms-2">
+                                        Save
+                                    </a>
+                                </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+
+    </div>
+    </div>
+    </main>
+
+    </div>
+    <script>            
+    </script>
+    {% endblock %}

@@ -1,0 +1,181 @@
+{%extends "dashboard_base.html" %}
+{% block title%} Index {% endblock %}
+{% block content%}
+<head>
+    {{form.media}}
+</head>
+<!-- main -->
+<main class="main-content-wrapper">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row mb-8">
+            <div class="col-md-12">
+                <div class="d-md-flex justify-content-between align-items-center">
+                    <!-- page header -->
+                    <div>
+                        <h2>Add New Product</h2>
+                        <!-- breacrumb -->
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb mb-0">
+                                <li class="breadcrumb-item"><a href="#" class="text-inherit">Dashboard</a></li>
+                                <li class="breadcrumb-item"><a href="#" class="text-inherit">Products</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Add New Product</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <!-- button -->
+                    <div>
+                        <a href="products.html" class="btn btn-light">Back to Product</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- row -->
+        <div class="row">
+            <div class="col-lg-8 col-12">
+                <!-- card -->
+                <div class="card mb-6 card-lg">
+                    <!-- card body -->
+                    <div class="card-body p-6 ">
+                        <form enctype="multipart/form-data" method="post">
+                            {% csrf_token %}
+                            <h4 class="mb-4 h5">Product Information</h4>
+                            {% if form.errors %}
+                            <div class="alert alert-danger alert-dismissible" role="alert">
+                                <div id="form_errors">
+                                    {% for key, value in form.errors.items %}
+                                    <strong>{{ value }}</strong>
+                                    {% endfor %}
+                                </div>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            {% endif %}
+                            <div class="row">
+                                <!-- input -->
+                                <div class="mb-3 col-lg-6">
+                                    <label class="form-label">Title</label>
+                                    {{form.name}}
+                                </div>
+                                <!-- input -->
+                                <div class="mb-3 col-lg-6">
+                                    <label class="form-label">Product Category</label>
+                                    {{form.category}}
+                                </div>
+                                <!-- input -->
+                                <div class="mb-3 col-lg-6">
+                                    <label class="form-label">Weight</label>
+                                    {{form.weigth}}
+                                </div>
+                                <!-- input -->
+                                <div class="mb-3 col-lg-6">
+                                    <label class="form-label">Units</label>
+                                    {{form.units}}
+                                </div>
+                                <div>
+                                    <div class="mb-3 col-lg-12 mt-5">
+                                        <!-- heading -->
+
+                                        <!-- input -->
+                                        {{form.images}}
+                                    </div>
+                                </div>
+                                <!-- input -->
+                                <div class="mb-3 col-lg-12 mt-5">
+                                    <h4 class="mb-3 h5">Product Descriptions</h4>
+                                    {{ form.description }}
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-12">
+                <!-- card -->
+                <div class="card mb-6 card-lg">
+                    <!-- card body -->
+                    <div class="card-body p-6">
+                        <!-- input -->
+                        <div class="form-check form-switch mb-4">
+                            <input class="form-check-input" type="checkbox" role="switch" id="{{ form.in_stock.id_for_label }}" name="{{ form.in_stock.html_name }}" {% if form.in_stock.value %}checked{% endif %}>
+                            <label class="form-check-label" for="{{ form.in_stock.id_for_label }}">In Stock</label>
+                        </div>
+                        <!-- input -->
+                        <div>
+                            <div class="mb-3">
+                                <label class="form-label">Product Code</label>
+                                {{ form.code }}
+                            </div>
+                            <!-- input -->
+                            <div class="mb-3">
+                                <label class="form-label">Product SKU</label>
+                                {{ form.sku }}
+                            </div>
+                            <!-- input -->
+                            <div class="mb-3">
+                                <label class="form-label" id="productSKU">Status</label><br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="status" id="active"
+                                        value="active" checked>
+                                    <label class="form-check-label" for="inlineRadio1">Active</label>
+                                </div>
+                                <!-- input -->
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="status" id="inactive"
+                                        value="inactive">
+                                    <label class="form-check-label" for="inlineRadio2">Disabled</label>
+                                </div>
+                                <!-- input -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- card -->
+                <div class="card mb-6 card-lg">
+                    <!-- card body -->
+                    <div class="card-body p-6">
+                        <h4 class="mb-4 h5">Product Price</h4>
+                        <!-- input -->
+                        <div class="mb-3">
+                            <label class="form-label">Regular Price</label>
+                            {{ form.price }}
+                        </div>
+                        <!-- input -->
+                        <div class="mb-3">
+                            <label class="form-label">Sale Price</label>
+                            {{ form.sale_price }}
+                        </div>
+                    </div>
+                </div>
+                <!-- card -->
+                <div class="card mb-6 card-lg">
+                    <!-- card body -->
+                    <div class="card-body p-6">
+                        <h4 class="mb-4 h5">Meta Data</h4>
+                        <!-- input -->
+                        <div class="mb-3">
+                            <label class="form-label">Meta Title</label>
+                            {{ form.meta_title }}
+                        </div>
+                        <!-- input -->
+                        <div class="mb-3">
+                            <label class="form-label">Meta Description</label>
+                            {{ form.meta_description }}
+                        </div>
+                    </div>
+                </div>
+                <!-- button -->
+                <div class="d-grid">
+                    <button class="btn btn-primary" type="submit">
+                        Create Product
+                    </button>
+                </div>
+            </div>
+            </form>
+
+        </div>
+    </div>
+</main>
+</div>
+{% endblock %}
